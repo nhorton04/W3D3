@@ -1,5 +1,10 @@
 class ShortenedUrl < ApplicationRecord
 
+  belongs_to :user,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :User
+
   def self.random_code
     url = "nick.com/="
     potential = ""
